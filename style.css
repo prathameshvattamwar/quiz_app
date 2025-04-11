@@ -483,3 +483,149 @@ h2 {
     gap: 10px;
   }
 }
+
+/* Info Button Style (for Review) */
+.btn-info {
+    background-color: #0ea5e9; /* Sky Blue */
+    color: #fff;
+}
+.btn-info:hover {
+    background-color: #0284c7; /* Darker Sky Blue */
+    transform: translateY(-2px);
+}
+
+/* --- Review Screen Specifics --- */
+#review-screen {
+    text-align: left; /* Align content left */
+}
+
+#review-details {
+    margin-bottom: 30px;
+    max-height: 60vh; /* Limit height and allow scrolling */
+    overflow-y: auto;
+    padding-right: 10px; /* Space for scrollbar */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+     background-color: #f9fafb;
+}
+
+.review-item {
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.05);
+}
+.review-item:last-child {
+    margin-bottom: 0;
+}
+
+.review-question {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+.review-question strong { /* Question number */
+    color: var(--primary-color);
+}
+
+
+.review-options {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.review-option {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    position: relative; /* For pseudo-elements */
+    transition: background-color 0.2s ease;
+}
+
+/* Highlighting User and Correct Answers */
+.review-option.correct-answer {
+    border-color: var(--accent-color);
+    background-color: #e0fcf3;
+    color: #047857;
+    font-weight: 600;
+}
+.review-option.correct-answer::before {
+    content: '✔';
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.review-option.user-selected {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 1px;
+}
+.review-option.user-selected::after { /* Indicate user choice */
+    content: '(Your Selection)';
+    font-size: 0.8em;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-left: 10px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Style for user's INCORRECT selection */
+.review-option.user-selected.incorrect-selection {
+    outline-color: var(--error-color);
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+.review-option.user-selected.incorrect-selection::after { /* Override 'Your Selection' text style for incorrect */
+     color: var(--error-color);
+}
+/* If user selected the correct answer, don't show incorrect styling */
+.review-option.user-selected.correct-answer {
+    outline-color: var(--accent-color); /* Keep outline consistent with correct */
+}
+.review-option.user-selected.correct-answer::after { /* User selected correctly */
+     color: var(--accent-color);
+     content: '(Correct Selection)';
+}
+
+
+.review-status {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.review-status .correct {
+    color: #047857;
+}
+.review-status .incorrect {
+     color: #b91c1c;
+}
+.review-status .timeup {
+    color: #f59e0b; /* Amber */
+}
+
+.review-logic {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f3f4f6; /* Light gray background */
+    border-left: 4px solid var(--secondary-color);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+.review-logic strong {
+    font-style: normal;
+     color: var(--text-color);
+}
