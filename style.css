@@ -43,13 +43,13 @@ body {
 /* --- Main App Container --- */
 .app-container {
   background-color: var(--container-bg);
-  padding: 0; /* Remove padding, header/main will handle */
+  padding: 0; 
   border-radius: 12px;
   box-shadow: 0 10px 25px var(--shadow-color);
   width: 100%;
-  max-width: 750px;
+  max-width: 1000px;
   text-align: center;
-  overflow: hidden; /* Contain border radius */
+  overflow: hidden;
 }
 
 .app-header {
