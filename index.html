@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Quiz App</title>
+    <title>Enhanced Quiz App with Review</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Optional: Add icon library like Font Awesome -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 </head>
 <body>
     <div class="app-container">
@@ -19,7 +17,7 @@
 
         <main class="main-content">
 
-            <!-- Setup Screen -->
+            <!-- Setup Screen (No changes here) -->
             <div id="setup-screen" class="screen active">
                 <div class="screen-content">
                     <h2>Configure Your Quiz</h2>
@@ -29,7 +27,7 @@
                             <option value="math">Math (Aptitude)</option>
                             <option value="english">English</option>
                             <option value="general">General Knowledge</option>
-                            <option value="logic">Logic & Series</option> <!-- Added Topic -->
+                            <option value="logic">Logic & Series</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -57,7 +55,7 @@
                 </div>
             </div>
 
-            <!-- Quiz Screen -->
+            <!-- Quiz Screen (No structural changes here) -->
             <div id="quiz-screen" class="screen">
                  <div class="screen-content">
                     <div class="quiz-header">
@@ -65,21 +63,20 @@
                         <div id="score-streak">Score: <span id="score">0</span> | Streak: <span id="streak">0</span></div>
                         <div id="timer"><span id="time">--</span>s</div>
                     </div>
-                    <!-- Visual Progress Bar -->
                     <div class="progress-bar-container">
                         <div id="progress-bar" class="progress-bar-inner"></div>
                     </div>
                     <div id="question-container">
                         <p id="question-text">Question text goes here...</p>
                         <div id="answer-options" class="options-grid">
-                            <!-- Option buttons will be generated here -->
+                            <!-- Option buttons -->
                         </div>
                     </div>
                     <div id="feedback" class="feedback-message"></div>
                 </div>
             </div>
 
-            <!-- Results Screen -->
+            <!-- Results Screen (Added Review Button) -->
             <div id="results-screen" class="screen">
                  <div class="screen-content">
                     <h2>Quiz Results</h2>
@@ -95,25 +92,40 @@
                     <div id="result-feedback" class="result-feedback-text"></div>
                     <div class="result-actions button-group">
                         <button id="reattempt-btn" class="btn btn-primary">Re-attempt</button>
-                        <button id="new-quiz-btn" class="btn btn-secondary">New Quiz Settings</button>
-                        <button id="view-history-results-btn" class="btn btn-secondary">View History</button>
+                        <button id="review-answers-btn" class="btn btn-info">Review Answers</button> <!-- Added Button -->
+                        <button id="new-quiz-btn" class="btn btn-secondary">New Quiz</button>
+                        <button id="view-history-results-btn" class="btn btn-secondary">History</button>
                     </div>
                 </div>
             </div>
 
-            <!-- History Screen -->
+            <!-- History Screen (No changes here) -->
             <div id="history-screen" class="screen">
                  <div class="screen-content">
                     <h2>Quiz History</h2>
                     <div id="history-list">
                         <p>No history found.</p>
-                        <!-- History entries will be loaded here -->
+                        <!-- History entries -->
                     </div>
                     <div class="button-group history-actions">
                          <button id="back-to-setup-btn" class="btn btn-secondary">Back to Setup</button>
                          <button id="clear-history-btn" class="btn btn-danger">Clear History</button>
                      </div>
                  </div>
+            </div>
+
+            <!-- Review Screen (New Screen) -->
+            <div id="review-screen" class="screen">
+                <div class="screen-content">
+                    <h2>Quiz Review</h2>
+                    <div id="review-details">
+                        <!-- Review content will be loaded here by JS -->
+                        <p>Loading review...</p>
+                    </div>
+                    <div class="button-group">
+                        <button id="back-to-results-btn" class="btn btn-secondary">Back to Results</button>
+                    </div>
+                </div>
             </div>
 
         </main>
